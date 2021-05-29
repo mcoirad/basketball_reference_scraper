@@ -67,7 +67,7 @@ def get_player_suffix(name):
                 return suffix, if not add 1 to the numbering
                 and recheck.
             """
-            if ((unidecode.unidecode(page_name)).lower() == normalized_name.lower()):
+            if ((unidecode.unidecode(page_name)).lower().replace(' jr.', '').replace(' sr.', '') == normalized_name.lower()):
                 return suffix
             else:
                 suffix = suffix[:-6] + str(int(suffix[-6])+1) + suffix[-5:]
